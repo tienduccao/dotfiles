@@ -14,7 +14,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdcommenter'
-
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
