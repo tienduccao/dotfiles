@@ -1,6 +1,11 @@
 "set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Set Latex's PDF viewer to Skim
+let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:vimtex_view_general_options_latexmk = '-r 1'
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
