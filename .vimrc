@@ -15,6 +15,7 @@ Plugin 'junegunn/fzf'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,3 +62,6 @@ nnoremap <C-H> <C-W><C-H>
 
 " color scheme
 colorscheme molokai
+
+inoremap <C-A> <C-X><C-O>
+
