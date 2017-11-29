@@ -70,3 +70,5 @@ colorscheme molokai
 
 inoremap <C-A> <C-X><C-O>
 
+" Map jj to Escape key
+imap jj <Esc>
