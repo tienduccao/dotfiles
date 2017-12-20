@@ -65,6 +65,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" tab navigation
+nnoremap tk :tabnext<CR>
+nnoremap tj :tabprev<CR>
+nnoremap th :tabfirst<CR>
+nnoremap tl :tablast<CR>
+
+
 " color scheme
 colorscheme molokai
 
