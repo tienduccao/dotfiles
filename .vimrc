@@ -79,3 +79,6 @@ inoremap <C-A> <C-X><C-O>
 
 " Map jj to Escape key
 imap jj <Esc>
+
+" Toggle maximize / restore normal size of a split window
+nnoremap <C-M> :MaximizerToggle<CR>
