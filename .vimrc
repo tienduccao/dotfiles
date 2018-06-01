@@ -5,6 +5,26 @@ filetype off                  " required
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 let g:vimtex_view_general_options_latexmk = '-r 1'
+"let g:vimtex_quickfix_autojump = 1
+let g:vimtex_quickfix_open_on_warning = 0
+let g:vimtex_quickfix_latexlog = {
+          \ 'default' : 0,
+          \ 'general' : 0,
+          \ 'references' : 0,
+          \ 'overfull' : 0,
+          \ 'underfull' : 0,
+          \ 'font' : 0,
+          \ 'packages' : {
+          \   'default' : 0,
+          \   'natbib' : 0,
+          \   'biblatex' : 0,
+          \   'babel' : 0,
+          \   'hyperref' : 0,
+          \   'scrreprt' : 0,
+          \   'fixltx2e' : 0,
+          \   'titlesec' : 0,
+          \ },
+          \}
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -80,5 +100,3 @@ inoremap <C-A> <C-X><C-O>
 " Map jj to Escape key
 imap jj <Esc>
 
-" Toggle maximize / restore normal size of a split window
-nnoremap <C-M> :MaximizerToggle<CR>
