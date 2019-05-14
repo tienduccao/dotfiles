@@ -169,3 +169,8 @@ let g:tex_flavor = "latex"
 " No need to save buffer when switching to a new one
 set hidden
 
+augroup markdownSpell
+    autocmd!
+    autocmd FileType tex setlocal spell
+    autocmd BufRead,BufNewFile *.tex setlocal spell
+augroup END
