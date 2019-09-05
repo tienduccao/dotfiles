@@ -1,3 +1,29 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'deoplete-plugins/deoplete-jedi'
+endif
+
+call plug#end()
+
+" deoplete options
+let g:deoplete#enable_at_startup = 1
+set completeopt=noinsert
+call deoplete#custom#option({
+    \ 'camel_case': v:true,
+    \ })
+
 "set nocompatible              " be iMproved, required
 filetype off                  " required
 
