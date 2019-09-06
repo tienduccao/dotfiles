@@ -1,3 +1,6 @@
+set list
+set listchars=tab:>-
+
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -18,6 +21,8 @@ else
 endif
 
 call plug#end()
+
+let g:polyglot_disabled = ['latex']
 
 " deoplete options
 let g:deoplete#enable_at_startup = 1
@@ -129,6 +134,9 @@ set tabstop=4           " use 4 spaces to represent tab
 set softtabstop=4
 set shiftwidth=4        " number of spaces to use for auto indent
 set autoindent          " copy indent from current line when starting a new line
+
+"set lcs+=space:.
+"set lcs+=eol:¬
 
 " make backspaces more powerfull
 set backspace=indent,eol,start
