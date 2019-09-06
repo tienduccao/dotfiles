@@ -13,6 +13,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'deoplete-plugins/deoplete-jedi'
+  " Syntax highlight
+  Plug 'sheerun/vim-polyglot'
 endif
 
 call plug#end()
