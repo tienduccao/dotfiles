@@ -12,12 +12,14 @@ call plug#begin('~/.vim/plugged')
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
+  "Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'deoplete-plugins/deoplete-jedi'
+  "Plug 'deoplete-plugins/deoplete-jedi'
   " Syntax highlight
   Plug 'sheerun/vim-polyglot'
+  Plug 'natebosch/vim-lsc'
+  Plug 'ajh17/VimCompletesMe'
 endif
 
 call plug#end()
@@ -25,11 +27,11 @@ call plug#end()
 let g:polyglot_disabled = ['latex']
 
 " deoplete options
-let g:deoplete#enable_at_startup = 1
-set completeopt=noinsert
-call deoplete#custom#option({
-    \ 'camel_case': v:true,
-    \ })
+"let g:deoplete#enable_at_startup = 1
+"set completeopt=noinsert
+"call deoplete#custom#option({
+    "\ 'camel_case': v:true,
+    "\ })
 
 "set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -92,7 +94,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdcommenter'
