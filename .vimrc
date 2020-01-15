@@ -26,6 +26,32 @@ call plug#end()
 
 let g:polyglot_disabled = ['latex']
 
+" LSC configuration
+let g:lsc_server_commands = {
+ \  'python': {
+ \    'command': 'pyls'
+ \  }
+ \}
+let g:lsc_auto_map = {
+ \  'GoToDefinition': 'gd',
+ \  'FindReferences': 'gr',
+ \  'Rename': 'gR',
+ \  'ShowHover': 'K',
+ \  'Completion': 'omnifunc',
+ \}
+"set completeopt=menu,menuone,noinsert,noselect
+let g:lsc_enable_autocomplete  = v:true
+let g:lsc_enable_diagnostics   = v:false
+let g:lsc_reference_highlights = v:false
+let g:lsc_trace_level          = 'off'
+
+augroup LSCcompletesplitbelow
+    autocmd!
+    autocmd User LSCAutocomplete setlocal splitbelow
+    autocmd CompleteDone * setlocal nosplitbelow
+augroup END
+
+
 " deoplete options
 "let g:deoplete#enable_at_startup = 1
 "set completeopt=noinsert
@@ -179,7 +205,7 @@ nnoremap tl :blast<CR>
 "autocmd BufEnter *.tex colorscheme molokai
 colorscheme Tomorrow-Night-Eighties
 
-inoremap <C-A> <C-X><C-O>
+"inoremap <C-A> <C-X><C-O>
 
 " Map jj to Escape key
 imap jj <Esc>
@@ -196,10 +222,10 @@ let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-let g:tex_flavor = "latex"
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-n>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+"let g:tex_flavor = "latex"
 " If you want :UltiSnipsEdit to split your window.
 "let g:UltiSnipsEditSplit="vertical"
 "
