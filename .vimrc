@@ -20,6 +20,7 @@ else
   Plug 'sheerun/vim-polyglot'
   Plug 'natebosch/vim-lsc'
   Plug 'ajh17/VimCompletesMe'
+  Plug 'nelstrom/vim-visual-star-search'
 endif
 
 call plug#end()
