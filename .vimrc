@@ -32,24 +32,26 @@ let g:lsc_server_commands = {
  \    'command': 'pyls'
  \  }
  \}
-let g:lsc_auto_map = {
- \  'GoToDefinition': 'gd',
- \  'FindReferences': 'gr',
- \  'Rename': 'gR',
- \  'ShowHover': 'K',
- \  'Completion': 'omnifunc',
- \}
-"set completeopt=menu,menuone,noinsert,noselect
-let g:lsc_enable_autocomplete  = v:true
+ let g:lsc_auto_map = {
+    \ 'GoToDefinition': '<C-]>',
+    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+    \ 'FindReferences': 'gr',
+    \ 'NextReference': '<C-n>',
+    \ 'PreviousReference': '<C-p>',
+    \ 'FindImplementations': 'gI',
+    \ 'FindCodeActions': 'ga',
+    \ 'Rename': 'gR',
+    \ 'ShowHover': v:true,
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'SignatureHelp': 'gm',
+    \ 'Completion': 'omnifunc',
+    \}
+" LSP-based omni-completion, via <Control-x><Control-o>
+let g:lsc_enable_autocomplete  = v:false
 let g:lsc_enable_diagnostics   = v:false
 let g:lsc_reference_highlights = v:false
 let g:lsc_trace_level          = 'off'
-
-augroup LSCcompletesplitbelow
-    autocmd!
-    autocmd User LSCAutocomplete setlocal splitbelow
-    autocmd CompleteDone * setlocal nosplitbelow
-augroup END
 
 
 " deoplete options
@@ -129,7 +131,7 @@ Plugin 'lervag/vimtex'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " To fix conflict between NERDTree and bd command
 Plugin 'qpkorr/vim-bufkill'
@@ -215,6 +217,7 @@ nnoremap fz :FZF<CR>
 nnoremap db :BD<CR>
 nnoremap ur :call UltiSnips#RefreshSnippets()<CR>
 "inoremap <Esc> <Esc>:w<CR>
+inoremap <C-A> <C-X><C-O>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
