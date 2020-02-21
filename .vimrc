@@ -23,6 +23,8 @@ else
   Plug 'nelstrom/vim-visual-star-search'
   " Aligning text by some character
   Plug 'tommcdo/vim-lion'
+  " Text objects based on indentation levels
+  Plug 'michaeljsmith/vim-indent-object'
 endif
 
 call plug#end()

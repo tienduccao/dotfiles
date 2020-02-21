@@ -19,3 +19,10 @@ $names = array(
     'lion',    'alfred',   'batman',    'linus',
 );
 ```
+## Text objects based on indentation levels: [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object)
++ `v<count>ai`: select lines from the current indentation level and **<count>**
+above indentation levels (a missing `<count>` means 1).
++ `vii`: select lines from the current indentation level.
++ `v` can be replaced by other operations such as `d` (delete), `y` (copy),
+`c` (change).
+
