@@ -21,6 +21,8 @@ else
   Plug 'natebosch/vim-lsc'
   Plug 'ajh17/VimCompletesMe'
   Plug 'nelstrom/vim-visual-star-search'
+  " Aligning text by some character
+  Plug 'tommcdo/vim-lion'
 endif
 
 call plug#end()
