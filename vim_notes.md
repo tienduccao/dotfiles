@@ -1,6 +1,7 @@
 # Useful commands
 + Show list key maps `:map`
 + Open the URL under the cursor `gx`
++ Latex forward search: `<localleader>lv`
 
 # Utility plugins
 ## Aligning text by some character: [vim-lion](https://github.com/tommcdo/vim-lion)
