@@ -33,7 +33,7 @@ let g:polyglot_disabled = ['latex']
 
 " LSC configuration
 let g:lsc_server_commands = {
- \  'python': {
+ \  'python3': {
  \    'command': 'pyls'
  \  }
  \}
