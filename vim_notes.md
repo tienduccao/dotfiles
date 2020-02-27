@@ -28,7 +28,7 @@ above indentation levels (a missing `<count>` means 1).
 `c` (change).
 
 ## Python autocompletion with [vim-lsc](https://github.com/natebosch/vim-lsc), [python-language-server](https://github.com/palantir/python-language-server), and [VimCopletesMe](https://github.com/ajh17/VimCompletesMe)
-+ Autocompletion is executed automaticall yafter typing at least 3 characters
++ Autocompletion is executed automatically after typing at least 3 characters
 or manually after pressing Tab key.
 Continue pressing Tab to select a suggestion in the popup window.
 + `gd`: go to definition of function, module.
