@@ -33,30 +33,28 @@ let g:polyglot_disabled = ['latex']
 
 " LSC configuration
 let g:lsc_server_commands = {
- \  'python3': {
+ \  'python': {
  \    'command': 'pyls'
  \  }
  \}
  let g:lsc_auto_map = {
-    \ 'GoToDefinition': '<C-]>',
-    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+    \ 'GoToDefinition': 'gd',
     \ 'FindReferences': 'gr',
-    \ 'NextReference': '<C-n>',
-    \ 'PreviousReference': '<C-p>',
-    \ 'FindImplementations': 'gI',
     \ 'FindCodeActions': 'ga',
     \ 'Rename': 'gR',
     \ 'ShowHover': v:true,
-    \ 'DocumentSymbol': 'go',
-    \ 'WorkspaceSymbol': 'gS',
+    \ 'DocumentSymbol': 'go', 
     \ 'SignatureHelp': 'gm',
     \ 'Completion': 'omnifunc',
     \}
-" LSP-based omni-completion, via <Control-x><Control-o>
-let g:lsc_enable_autocomplete  = v:false
+let g:lsc_enable_autocomplete  = v:true
 let g:lsc_enable_diagnostics   = v:false
-let g:lsc_reference_highlights = v:false
+let g:lsc_reference_highlights = v:true
 let g:lsc_trace_level          = 'off'
+" show autocomplete menu and preview window
+set completeopt=menu,menuone,noinsert,noselect,preview
+" close the preview window automatically
+autocmd CompleteDone * pclose 
 
 
 " deoplete options

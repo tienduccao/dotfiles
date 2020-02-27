@@ -27,3 +27,16 @@ above indentation levels (a missing `<count>` means 1).
 + `v` can be replaced by other operations such as `d` (delete), `y` (copy),
 `c` (change).
 
+## Python autocompletion with [vim-lsc](https://github.com/natebosch/vim-lsc) 
+, [python-language-server](https://github.com/palantir/python-language-server),
+and [VimCopletesMe](https://github.com/ajh17/VimCompletesMe)
++ Autocompletion is executed automaticall yafter typing at least 3 characters
+or manually after pressing Tab key.
+Continue pressing Tab to select a suggestion in the popup window.
++ `gd`: go to definition of function, module.
++ `gR`: rename variable/function.
++ `gm`: show function signature, the cursor must be placed under ( or ) character.
++ `go`: show a quickquick window of symbols (variables, functions).
++ `K`: show a preview window to display information of a function under the cursor.
++ To use all of these features in virtualenv, python-language-server needs to
+be installed (`pip install 'python-language-server[all]'`) first.
