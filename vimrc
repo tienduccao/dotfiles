@@ -33,7 +33,7 @@ let g:polyglot_disabled = ['latex']
 
 " LSC configuration
 let g:lsc_server_commands = {
- \  'python': {
+ \  'python3': {
  \    'command': 'pyls'
  \  }
  \}
@@ -244,3 +244,5 @@ augroup markdownSpell
     autocmd FileType tex setlocal spell
     autocmd BufRead,BufNewFile *.tex setlocal spell
 augroup END
+
+vmap <C-C> "+y
