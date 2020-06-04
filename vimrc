@@ -12,13 +12,10 @@ call plug#begin('~/.vim/plugged')
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  "Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
-  "Plug 'deoplete-plugins/deoplete-jedi'
   " Syntax highlight
   Plug 'sheerun/vim-polyglot'
-  Plug 'natebosch/vim-lsc'
   Plug 'ajh17/VimCompletesMe'
   Plug 'nelstrom/vim-visual-star-search'
   " Aligning text by some character
@@ -31,40 +28,6 @@ call plug#end()
 
 let g:polyglot_disabled = ['latex']
 
-" LSC configuration
-let g:lsc_server_commands = {
- \  'python3': {
- \    'command': 'pyls'
- \  }
- \}
- let g:lsc_auto_map = {
-    \ 'GoToDefinition': 'gd',
-    \ 'FindReferences': 'gr',
-    \ 'FindCodeActions': 'ga',
-    \ 'Rename': 'gR',
-    \ 'ShowHover': v:true,
-    \ 'DocumentSymbol': 'go', 
-    \ 'SignatureHelp': 'gm',
-    \ 'Completion': 'omnifunc',
-    \}
-let g:lsc_enable_autocomplete  = v:true
-let g:lsc_enable_diagnostics   = v:false
-let g:lsc_reference_highlights = v:true
-let g:lsc_trace_level          = 'off'
-" show autocomplete menu and preview window
-set completeopt=menu,menuone,noinsert,noselect,preview
-" close the preview window automatically
-autocmd CompleteDone * pclose 
-
-
-" deoplete options
-"let g:deoplete#enable_at_startup = 1
-"set completeopt=noinsert
-"call deoplete#custom#option({
-    "\ 'camel_case': v:true,
-    "\ })
-
-"set nocompatible              " be iMproved, required
 filetype off                  " required
 
 let g:airline#extensions#tabline#enabled = 1
@@ -246,3 +209,15 @@ augroup markdownSpell
 augroup END
 
 vmap <C-C> "+y
+
+" Kite settings
+let g:kite_supported_languages = ['python']
+let g:kite_snippets=1
+set completeopt+=menuone   " show the popup menu even when there is only 1 match
+set completeopt+=noinsert  " don't insert any text until user chooses a match
+set completeopt-=longest   " don't insert the longest common text
+set completeopt-=noselect   " Highlight the first completion automatically
+set completeopt+=preview
+autocmd CompleteDone * if !pumvisible() | pclose | endif
+set belloff+=ctrlg  " if vim beeps during completion
+
