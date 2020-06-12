@@ -97,7 +97,7 @@ Plugin 'lervag/vimtex'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " To fix conflict between NERDTree and bd command
 Plugin 'qpkorr/vim-bufkill'
@@ -187,7 +187,7 @@ inoremap <C-A> <C-X><C-O>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex.gz$']
+let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex.gz$', '__pycache__']
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
