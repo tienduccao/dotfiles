@@ -78,6 +78,11 @@ command! -bang -nargs=* Ag
       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
       \                 <bang>0)
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-y': 'vsplit' }
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -137,6 +142,9 @@ set autoindent          " copy indent from current line when starting a new line
 " make backspaces more powerfull
 set backspace=indent,eol,start
 
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 autoindent
+
+
 set ruler                           " show line and column number
 set number
 "set number relativenumber
@@ -187,7 +195,7 @@ inoremap <C-A> <C-X><C-O>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex.gz$', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex.gz$', '__pycache__', 'node_modules']
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -220,4 +228,3 @@ set completeopt-=noselect   " Highlight the first completion automatically
 set completeopt+=preview
 autocmd CompleteDone * if !pumvisible() | pclose | endif
 set belloff+=ctrlg  " if vim beeps during completion
-
