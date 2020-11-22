@@ -21,6 +21,8 @@ Plug 'tommcdo/vim-lion'
 Plug 'michaeljsmith/vim-indent-object'
 " Python docstring
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+" Jump to any defition and references
+Plug 'pechorin/any-jump.vim'
 
 call plug#end()
 
@@ -231,3 +233,9 @@ set belloff+=ctrlg  " if vim beeps during completion
 let g:pydocstring_formatter = 'google'
 nnoremap pd :Pydocstring<CR>
 nnoremap apd :PydocstringFormat<CR>
+
+" any-jump
+let g:any_jump_search_prefered_engine = 'ag'
+let g:any_jump_results_ui_style = 'filename_first'
+let g:any_jump_ignored_files = ['htmlcov/*', '*.pyc']
+let g:any_jump_disable_vcs_ignore = 1

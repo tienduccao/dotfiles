@@ -8,3 +8,5 @@ sudo usermod -s /usr/bin/zsh $(whoami)
 sudo apt-get install powerline fonts-powerline zsh-theme-powerlevel9k zsh-syntax-highlighting
 echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+
+sudo apt-get install silversearcher-ag
