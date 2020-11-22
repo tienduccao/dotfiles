@@ -9,20 +9,18 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-  " Syntax highlight
-  Plug 'sheerun/vim-polyglot'
-  Plug 'ajh17/VimCompletesMe'
-  Plug 'nelstrom/vim-visual-star-search'
-  " Aligning text by some character
-  Plug 'tommcdo/vim-lion'
-  " Text objects based on indentation levels
-  Plug 'michaeljsmith/vim-indent-object'
-endif
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+" Syntax highlight
+Plug 'sheerun/vim-polyglot'
+Plug 'ajh17/VimCompletesMe'
+Plug 'nelstrom/vim-visual-star-search'
+" Aligning text by some character
+Plug 'tommcdo/vim-lion'
+" Text objects based on indentation levels
+Plug 'michaeljsmith/vim-indent-object'
+" Python docstring
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 call plug#end()
 
@@ -228,3 +226,8 @@ set completeopt-=noselect   " Highlight the first completion automatically
 set completeopt+=preview
 autocmd CompleteDone * if !pumvisible() | pclose | endif
 set belloff+=ctrlg  " if vim beeps during completion
+
+" docstring
+let g:pydocstring_formatter = 'google'
+nnoremap pd :Pydocstring<CR>
+nnoremap apd :PydocstringFormat<CR>
