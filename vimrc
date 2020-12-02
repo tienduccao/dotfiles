@@ -233,6 +233,7 @@ set belloff+=ctrlg  " if vim beeps during completion
 let g:pydocstring_formatter = 'google'
 nnoremap pd :Pydocstring<CR>
 nnoremap apd :PydocstringFormat<CR>
+nmap <silent> <C-m> <Plug>(pydocstring)
 
 " any-jump
 let g:any_jump_search_prefered_engine = 'ag'
