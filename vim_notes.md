@@ -38,3 +38,12 @@ Continue pressing Tab to select a suggestion in the popup window.
 + `K`: show a preview window to display information of a function under the cursor.
 + To use all of these features in virtualenv, python-language-server needs to
 be installed (`pip install 'python-language-server[all]'`) first.
+
+# Troubleshooting
+## Make fzf respect .gitignore 
+First install `fd` command, e.g., `brew install fd` on Mac.
+Then
+
+```
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+```
