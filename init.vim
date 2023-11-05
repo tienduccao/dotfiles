@@ -1,31 +1,6 @@
 set list
 set listchars=tab:>-
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-" Syntax highlight
-Plug 'sheerun/vim-polyglot'
-Plug 'ajh17/VimCompletesMe'
-Plug 'nelstrom/vim-visual-star-search'
-" Aligning text by some character
-Plug 'tommcdo/vim-lion'
-" Text objects based on indentation levels
-Plug 'michaeljsmith/vim-indent-object'
-" Python docstring
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-" Jump to any defition and references
-Plug 'pechorin/any-jump.vim'
-
-call plug#end()
-
 let g:polyglot_disabled = ['latex']
 
 filetype off                  " required
@@ -92,6 +67,21 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+" Syntax highlight
+Plugin 'sheerun/vim-polyglot'
+Plugin 'ajh17/VimCompletesMe'
+Plugin 'nelstrom/vim-visual-star-search'
+" Aligning text by some character
+Plugin 'tommcdo/vim-lion'
+" Text objects based on indentation levels
+Plugin 'michaeljsmith/vim-indent-object'
+" Python docstring
+Plugin 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+" Jump to any defition and references
+Plugin 'pechorin/any-jump.vim'
+
 Plugin 'VundleVim/Vundle.vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'junegunn/fzf'
@@ -102,10 +92,10 @@ Plugin 'lervag/vimtex'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 " To fix conflict between NERDTree and bd command
 Plugin 'qpkorr/vim-bufkill'
+
+Plugin 'tpope/vim-obsession'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -142,7 +132,7 @@ set autoindent          " copy indent from current line when starting a new line
 " make backspaces more powerfull
 set backspace=indent,eol,start
 
-autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 autoindent
+"autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 autoindent
 
 
 set ruler                           " show line and column number
@@ -189,13 +179,13 @@ imap jj <Esc>
 " Less keystrokes 
 nnoremap fz :FZF<CR>
 nnoremap db :BD<CR>
-nnoremap ur :call UltiSnips#RefreshSnippets()<CR>
 "inoremap <Esc> <Esc>:w<CR>
 inoremap <C-A> <C-X><C-O>
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex.gz$', '__pycache__', 'node_modules']
+let g:NERDTreeWinSize = 70
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -218,16 +208,16 @@ augroup END
 
 vmap <C-C> "+y
 
-" Kite settings
-let g:kite_supported_languages = ['python']
-let g:kite_snippets=1
-set completeopt+=menuone   " show the popup menu even when there is only 1 match
-set completeopt+=noinsert  " don't insert any text until user chooses a match
-set completeopt-=longest   " don't insert the longest common text
-set completeopt-=noselect   " Highlight the first completion automatically
-set completeopt+=preview
-autocmd CompleteDone * if !pumvisible() | pclose | endif
-set belloff+=ctrlg  " if vim beeps during completion
+"" Kite settings
+"let g:kite_supported_languages = ['python']
+"let g:kite_snippets=1
+"set completeopt+=menuone   " show the popup menu even when there is only 1 match
+"set completeopt+=noinsert  " don't insert any text until user chooses a match
+"set completeopt-=longest   " don't insert the longest common text
+"set completeopt-=noselect   " Highlight the first completion automatically
+"set completeopt+=preview
+"autocmd CompleteDone * if !pumvisible() | pclose | endif
+"set belloff+=ctrlg  " if vim beeps during completion
 
 " docstring
 let g:pydocstring_formatter = 'google'
@@ -240,3 +230,5 @@ let g:any_jump_search_prefered_engine = 'ag'
 let g:any_jump_results_ui_style = 'filename_first'
 let g:any_jump_ignored_files = ['htmlcov/*', '*.pyc']
 let g:any_jump_disable_vcs_ignore = 1
+
+let g:copilot_node_command = '/Users/duccao/.nvm/versions/node/v16.20.2/bin/node'
