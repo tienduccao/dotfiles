@@ -44,15 +44,7 @@ let g:vimtex_toc_config = {
             \},
           \}
 
-" ## FZF
-"let g:fzf_command_prefix = 'Fz'
-"let g:fzf_commands_expect = 'alt-enter'
-"let g:fzf_history_dir = '~/.local/share/fzf-history'
-command! -bang -nargs=* Ag
-      \ call fzf#vim#ag(<q-args>,
-      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \                 <bang>0)
+" FZF
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
@@ -186,6 +178,8 @@ inoremap <C-A> <C-X><C-O>
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.fls$', '\.fdb_latexmk$', '\.synctex.gz$', '__pycache__', 'node_modules']
 let g:NERDTreeWinSize = 70
+let g:NERDTreeShowHidden=1
+
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
